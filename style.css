@@ -1,0 +1,60 @@
+html {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 2px solid white; */
+    transition: all 0.5s;
+}
+
+section{
+    height: 100vh; width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box{
+    width: 80px; height: 80px;
+}
+
+#dock{
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.box:hover {
+    transform: scale(1.5) translateY(-25px);
+}
+
+.box:hover + .box{
+    transform: scale(1.15) translateY(-20px);
+}
+
+.box:has(+ .box:hover){
+    transform: scale(1.15) translateY(-20px);
+}
+
+/* .box:hover ~ .box:not(.box:hover + .box){
+    height: 50px; width: 50px;
+}
+
+.box:has(~ .box:hover):not(.box:has(+ .box:hover)){
+    height: 50px; width: 50px;
+} */
+
+#dock:hover .box:not(.box:hover):not(.box:hover + .box){
+    height: 50px; width: 50px;   
+}
